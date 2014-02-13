@@ -1,103 +1,133 @@
-Requirements:
--------------------------
-Generic:
-* Bitcoin >=0.8.5
-* Python >=2.6
-* Twisted >=10.0.0
-* python-argparse (for Python =2.6)
+http://www.e-pool.net     p2pool nodes
+======================================================================================
 
-Linux:
-* sudo apt-get install python-zope.interface python-twisted python-twisted-web
-* sudo apt-get install python-argparse # if on Python 2.6
 
-Windows:
-* Install Python 2.7: http://www.python.org/getit/
-* Install Twisted: http://twistedmatrix.com/trac/wiki/Downloads
-* Install Zope.Interface: http://pypi.python.org/pypi/zope.interface/3.8.0
-* Install python win32 api: http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/
-* Install python win32 api wmi wrapper: https://pypi.python.org/pypi/WMI/#downloads
-* Unzip the files into C:\Python27\Lib\site-packages
 
-Running P2Pool:
--------------------------
-To use P2Pool, you must be running your own local bitcoind. For standard
-configurations, using P2Pool should be as simple as:
 
-    python run_p2pool.py
+Bitcoin 	btc.e-pool.net:8800
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://btc.e-pool.net:8800 -u YourWalletAddress -p password
 
-Then run your miner program, connecting to 127.0.0.1 on port 9332 with any
-username and password.
 
-If you are behind a NAT, you should enable TCP port forwarding on your
-router. Forward port 9333 to the host running P2Pool.
+Catcoin 	cat.e-pool.net:9993
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://cat.e-pool.net:9993 -u YourWalletAddress -p password
 
-Run for additional options.
 
-    python run_p2pool.py --help
+Casinocoin 	csc.e-pool.net:8840
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://csc.e-pool.net:8840 -u YourWalletAddress -p password
+
+
+Craftcoin 	crc.e-pool.net:8830
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://crc.e-pool.net:8830 -u YourWalletAddress -p password
+
+
+Digitalcoin 	dgc.e-pool.net:8810
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://dgc.e-pool.net:8810 -u YourWalletAddress -p password
+
+
+Dogecoin 	doge.e-pool.net:9555
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://doge.e-pool.net:9555 -u YourWalletAddress -p password
+
+
+Litecoin 	ltc.e-pool.net:9327
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://ltc.e-pool.net:9327 -u YourWalletAddress -p password
+
+
+Worldcoin 	wdc.e-pool.net:8820 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://wdc.e-pool.net:8820 -u YourWalletAddress -p password
+
+
+USDe 	usd.e-pool.net:8860 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://usd.e-pool.net:8860 -u YourWalletAddress -p password
+
+
+Luckycoin 	lky.e-pool.net:8850 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://lky.e-pool.net:8850 -u YourWalletAddress -p password
+
+
+Bitbar 	btb.e-pool.net:8870 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://btb.e-pool.net:8870 -u YourWalletAddress -p password
+
+
+Novacoin 	nvc.e-pool.net:8890 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://nvc.e-pool.net:8890 -u YourWalletAddress -p password
+
+
+Sexcoin 	sxc.e-pool.net:8880 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://sxc.e-pool.net:8880 -u YourWalletAddress -p password
+
+
+Franko 	frk.e-pool.net:8900 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://frk.e-pool.net:8900 -u YourWalletAddress -p password
+
+
+Quark 	qrk.e-pool.net:8910 	
+--------------------------------------------------------------------------------------
+minerd -a quark -o stratum+tcp://qrk.e-pool.net:8910 -u YourWalletAddress -p password
+
+
+Zetacoin 	zet.e-pool.net:8920 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://zet.e-pool.net:8920 -u YourWalletAddress -p password
+
+
+Joulecoin 	xjo.e-pool.net:8930 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://xjo.e-pool.net:8930 -u YourWalletAddress -p password
+
+
+Vertcoin 	vtc.e-pool.net:8940 	
+--------------------------------------------------------------------------------------
+vertminer --scrypt -o stratum+tcp://vtc.e-pool.net:8940 -u YourWalletAddress -p password
+
+
+eKrona 	krn.e-pool.net:8950 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://krn.e-pool.net:8950 -u YourWalletAddress -p password
+
+
+Smartcoin 	smc.e-pool.net:8960 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://smc.e-pool.net:8960 -u YourWalletAddress -p password
+
+
+Asiccoin 	asc.e-pool.net:8980 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://asc.e-pool.net:8980 -u YourWalletAddress -p password
+
+
+Extremecoin 	p2pool.e-pool.net:8970 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://p2pool.e-pool.net:8970 -u YourWalletAddress -p password
+
+
+Potcoin 	p2pool.e-pool.net:8989 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://p2pool.e-pool.net:8989 -u YourWalletAddress -p password
+
+
+Tigercoin 	p2pool.e-pool.net:8938 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://p2pool.e-pool.net:8938 -u YourWalletAddress -p password
+
+
+
+
 
 Donations towards further development:
 -------------------------
-    1HNeqi3pJRNvXybNX4FKzZgYJsdTSqJTbk
-
-Official wiki :
--------------------------
-https://en.bitcoin.it/wiki/P2Pool
-
-Alternate web front end :
--------------------------
-* https://github.com/hardcpp/P2PoolExtendedFrontEnd
-
-Notes for Litecoin:
-=========================
-Requirements:
--------------------------
-In order to run P2Pool with the Litecoin network, you would need to build and install the
-ltc_scrypt module that includes the scrypt proof of work code that Litecoin uses for hashes.
-
-Linux:
-
-    cd litecoin_scrypt
-    sudo python setup.py install
-
-Windows (mingw):
-* Install MinGW: http://www.mingw.org/wiki/Getting_Started
-* Install Python 2.7: http://www.python.org/getit/
-
-In bash type this:
-
-    cd litecoin_scrypt
-    C:\Python27\python.exe setup.py build --compile=mingw32 install
-
-Windows (microsoft visual c++)
-* Open visual studio console
-
-In bash type this:
-
-    SET VS90COMNTOOLS=%VS110COMNTOOLS%	           # For visual c++ 2012
-    SET VS90COMNTOOLS=%VS100COMNTOOLS%             # For visual c++ 2010
-    cd litecoin_scrypt
-    C:\Python27\python.exe setup.py build --compile=mingw32 install
+	1Enukvtg4uMptBXjzmsdvmpo9n2LNdENGx
 	
-If you run into an error with unrecognized command line option '-mno-cygwin', see this:
-http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produces-gcc-error-unrecognized-command-line-o
-
-Running P2Pool:
--------------------------
-Run P2Pool with the "--net litecoin" option.
-Run your miner program, connecting to 127.0.0.1 on port 9327.
-Forward port 9338 to the host running P2Pool.
-
-Litecoin's use of ports 9332 and 9332 conflicts with P2Pool running on
-the Bitcoin network. To avoid problems, add these lines to litecoin.conf
-and restart litecoind:
-
-    rpcport=10332
-    port=10333
-
-Sponsors:
--------------------------
-
-Thanks to:
-* The Bitcoin Foundation for its generous support of P2Pool
-* The Litecoin Project for its generous donations to P2Pool
-
