@@ -122,6 +122,42 @@ nets = dict(
         VERSION_CHECK=lambda v: True,
         VERSION_WARNING=lambda v: 'Upgrade Terracoin to >= 0.8.0.1!' if v < 80001 else None,
     ),
+    platinum=math.Object(
+        PARENT=networks.nets['platinum'],
+        SHARE_PERIOD=5, # seconds
+        CHAIN_LENGTH=24*60*60//5, # shares
+        REAL_CHAIN_LENGTH=24*60*60//5, # shares
+        TARGET_LOOKBEHIND=200, # shares
+        SPREAD=100, # blocks
+        IDENTIFIER='b5fafab5fab5dfdb'.decode('hex'),
+        PREFIX='d5fddffab5dfdbfd'.decode('hex'),
+        P2P_PORT=29926,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**32 - 1,
+        PERSIST=False,
+        WORKER_PORT=8926,
+        BOOTSTRAP_ADDRS='p2pool.e-pool.net '.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
+    Extremecoin=math.Object(
+        PARENT=networks.nets['Extremecoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=3*60*60//15, # shares
+        REAL_CHAIN_LENGTH=3*60*60//15, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=30, # blocks
+        IDENTIFIER='5F08D07F3EB0ced0'.decode('hex'),
+        PREFIX='75AD675C0064ced0'.decode('hex'),
+        P2P_PORT=29966,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8970,
+        BOOTSTRAP_ADDRS='p2pool.e-pool.net 192.168.10.101:26666 67.233.200.130'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
 
 )
 for net_name, net in nets.iteritems():
