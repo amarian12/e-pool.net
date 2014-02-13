@@ -124,7 +124,9 @@ Tigercoin 	p2pool.e-pool.net:8938
 cgminer -o stratum+tcp://p2pool.e-pool.net:8938 -u YourWalletAddress -p password
 
 
-
+Platinum 	p2pool.e-pool.net:8926 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://p2pool.e-pool.net:8926 -u YourWalletAddress -p password
 
 
 Donations towards further development:
