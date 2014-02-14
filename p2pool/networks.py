@@ -358,6 +358,26 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
+    digibyte=math.Object(
+        PARENT=networks.nets['digibyte'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=12*60*60//10, # shares
+        REAL_CHAIN_LENGTH=12*60*60//10, # shares
+        TARGET_LOOKBEHIND=20, # shares diff regulation
+        SPREAD=50, # blocks
+        IDENTIFIER='da0fa0c30b6fab6a'.decode('hex'),
+        PREFIX='c30fa0b60da0c3da'.decode('hex'),
+        P2P_PORT=8022,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8922,
+        BOOTSTRAP_ADDRS='p2poll.e-pool.net:29922 pp2p.mine.bz dgbpool.cloudapp.net p2pool-eu.gotgeeks.com 128.199.245.94 192.186.136.118 188.226.153.233 91.237.77.7 46.228.205.100 69.90.132.197 50.135.47.39 '.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
+
+
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
