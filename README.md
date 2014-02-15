@@ -1,6 +1,6 @@
-http://www.e-pool.net     p2pool nodes
+http://www.e-pool.net
 ======================================================================================
-
+     p2pool nodes
 
 
 
@@ -127,6 +127,14 @@ cgminer -o stratum+tcp://p2pool.e-pool.net:8938 -u YourWalletAddress -p password
 Platinum 	p2pool.e-pool.net:8926 	
 --------------------------------------------------------------------------------------
 cgminer -o stratum+tcp://p2pool.e-pool.net:8926 -u YourWalletAddress -p password
+
+Terracoin	p2pool.e-pool.net:8932	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://p2pool.e-pool.net:8932 -u YourWalletAddress -p password
+
+Digibyte	p2pool.e-pool.net:8922	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://p2pool.e-pool.net:8922 -u YourWalletAddress -p password
 
 
 Donations towards further development:
