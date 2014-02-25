@@ -342,9 +342,9 @@ nets = dict(
     ),
     platinum=math.Object(
         PARENT=networks.nets['platinum'],
-        SHARE_PERIOD=5, # seconds
-        CHAIN_LENGTH=24*60*60//5, # shares
-        REAL_CHAIN_LENGTH=24*60*60//5, # shares
+        SHARE_PERIOD=20, # seconds
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
         TARGET_LOOKBEHIND=200, # shares
         SPREAD=100, # blocks
         IDENTIFIER='b5fafab5fab5dfdb'.decode('hex'),
@@ -376,7 +376,24 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
-
+    continuumcoin=math.Object(
+        PARENT=networks.nets['continuumcoin'],
+        SHARE_PERIOD=30, # seconds target spacing
+        CHAIN_LENGTH=12*60*60//30, # shares
+        REAL_CHAIN_LENGTH=12*60*60//30, # shares
+        TARGET_LOOKBEHIND=20, # shares coinbase maturity
+        SPREAD=20, # blocks
+        IDENTIFIER='F1F0F2D3B2F68AB0'.decode('hex'),
+        PREFIX='F1F3D4A540C00DF9'.decode('hex'),
+        P2P_PORT=7983,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**32 - 1,
+        PERSIST=False,
+        WORKER_PORT=8983,
+        BOOTSTRAP_ADDRS='192.227.238.236 pool.broketech.pw p2pool.e-pool.net'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
 
 )
 for net_name, net in nets.iteritems():
