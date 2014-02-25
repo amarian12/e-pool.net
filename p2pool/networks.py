@@ -394,7 +394,24 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
-
+    pwnycoin=math.Object(
+        PARENT=networks.nets['pwnycoin'],
+        SHARE_PERIOD=30, # seconds
+        CHAIN_LENGTH=12*60*60//30, # shares
+        REAL_CHAIN_LENGTH=12*60*60//30, # shares
+        TARGET_LOOKBEHIND=20, # shares
+        SPREAD=20, # blocks
+        IDENTIFIER='cdb0b4afb37d4ca6'.decode('hex'),
+        PREFIX='c7a4b09e04ade234'.decode('hex'),
+        P2P_PORT=26661,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**32 - 1,
+        PERSIST=False,
+        WORKER_PORT=26662,
+        BOOTSTRAP_ADDRS='192.227.238.236 p2pool.e-pool.net'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
