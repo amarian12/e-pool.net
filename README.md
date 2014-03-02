@@ -136,8 +136,27 @@ Digibyte	p2pool.e-pool.net:8922
 --------------------------------------------------------------------------------------
 cgminer --scrypt -o stratum+tcp://p2pool.e-pool.net:8922 -u YourWalletAddress -p password
 
+Continuumcoin 	p2pool.e-pool.net:8936 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://p2pool.e-pool.net:8936 -u YourWalletAddress -p password
+
+DNotes 	p2pool.e-pool.net:8923 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://p2pool.e-pool.net:8923 -u YourWalletAddress -p password
+
+Pwnycoin 	p2pool.e-pool.net:8967 	
+--------------------------------------------------------------------------------------
+cgminer -o stratum+tcp://p2pool.e-pool.net:8967 -u YourWalletAddress -p password
+
+
+Revolutioncoin 	p2pool.e-pool.net:8877 	
+--------------------------------------------------------------------------------------
+cgminer --scrypt -o stratum+tcp://p2pool.e-pool.net:8877 -u YourWalletAddress -p password
+
 
 Donations towards further development:
 -------------------------
 	1Enukvtg4uMptBXjzmsdvmpo9n2LNdENGx
 	
+http://e-pool.net/#contact
+
