@@ -517,7 +517,27 @@ nets = dict(
         DUMB_SCRYPT_DIFF=2**16,
         DUST_THRESHOLD=0.03e8,
     ),
-
+    revolution=math.Object(
+        P2P_PREFIX='fbc0b6db'.decode('hex'),
+        P2P_PORT=31577,
+        ADDRESS_VERSION=88,
+        RPC_PORT=31576,
+        RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
+            'RevolutionCoinaddress' in (yield bitcoind.rpc_help()) and
+            not (yield bitcoind.rpc_getinfo())['testnet']
+        )),
+        SUBSIDY_FUNC=lambda height: 16*100000000,
+        POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
+        BLOCK_PERIOD=120, # s targetspacing
+        SYMBOL='CHE',
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'revolution') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/revolution/') if platform.system() == 'Darwin' else os.path.expanduser('~/.revolution'), 'revolution.conf'),
+        BLOCK_EXPLORER_URL_PREFIX='http://blockexplorer.revolutioncoin.org/index.php?block_hash=',
+        ADDRESS_EXPLORER_URL_PREFIX='http://blockexplorer.revolutioncoin.org/index.php?address=',
+        TX_EXPLORER_URL_PREFIX='http://blockexplorer.revolutioncoin.org/index.php?transaction=',
+        SANE_TARGET_RANGE=(2**256//100000000 - 1, 2**256//1000 - 1),
+        DUMB_SCRYPT_DIFF=2**16,
+        DUST_THRESHOLD=0.03e8,
+    ),
 
 
 )
