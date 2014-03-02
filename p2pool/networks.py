@@ -466,6 +466,27 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-drk',
         VERSION_CHECK=lambda v: True,
     ),
+    auroracoin=math.Object(
+        PARENT=networks.nets['auroracoin'],
+        SHARE_PERIOD=15, # seconds
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares
+        SPREAD=10, # blocks
+        IDENTIFIER='e037d5b8c69231ce'.decode('hex'),
+        PREFIX='7208c1a53ef621ce'.decode('hex'),
+        P2P_PORT=12348,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=True,
+        WORKER_PORT=12347,
+        BOOTSTRAP_ADDRS='5.9.157.150 144.76.107.81 p2pool.e-pool.net'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-aur',
+        VERSION_CHECK=lambda v: True,
+        VERSION_WARNING=lambda v: 'Upgrade AuroraCoin to >=1.0.1!' if v < 1010000 else None,
+    ),
+
+
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
