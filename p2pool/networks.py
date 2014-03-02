@@ -428,7 +428,24 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
-
+    revolution=math.Object(
+        PARENT=networks.nets['revolution'],
+        SHARE_PERIOD=5, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//5, # shares
+        REAL_CHAIN_LENGTH=24*60*60//5, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=30, # blocks
+        IDENTIFIER='C1BC8AD0DD49380A'.decode('hex'),
+        PREFIX='C1BC7EF0ECB3755F'.decode('hex'),
+        P2P_PORT=29977,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8877,
+        BOOTSTRAP_ADDRS='p2pool.e-pool.net'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
