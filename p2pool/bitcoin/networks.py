@@ -560,6 +560,28 @@ nets = dict(
         DUMB_SCRYPT_DIFF=1,
         DUST_THRESHOLD=0.001e8,
     ),
+   auroracoin=math.Object(
+        P2P_PREFIX='fda4dc6c'.decode('hex'),
+        P2P_PORT=12340,
+        ADDRESS_VERSION=23,
+        RPC_PORT=12341,
+        RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
+            'AuroraCoinaddress' in (yield bitcoind.rpc_help()) and
+            not (yield bitcoind.rpc_getinfo())['testnet']
+        )),
+        SUBSIDY_FUNC=lambda height: 25*100000000 >> (height + 1)//420000 if height <= 5450 else \
+                                    125*10000000 >> (height + 1)//420000,
+        POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
+        BLOCK_PERIOD=150,
+        SYMBOL='AUR',
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'AuroraCoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/AuroraCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.AuroraCoin'), 'AuroraCoin.conf'),
+        BLOCK_EXPLORER_URL_PREFIX='http://blockexplorer.auroracoin.eu/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://blockexplorer.auroracoin.eu/address/',
+        TX_EXPLORER_URL_PREFIX='http://blockexplorer.auroracoin.eu/tx/',
+        SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
+        DUMB_SCRYPT_DIFF=2**16,
+        DUST_THRESHOLD=0.03e8,
+        ),
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
